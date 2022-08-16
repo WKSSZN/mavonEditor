@@ -1,13 +1,13 @@
 {
-  "name": "mavon-editor",
-  "version": "2.10.4",
-  "description": "Vue markdown editor",
+  "name": "mavon-editor-wzn",
+  "version": "1.0.1",
+  "description": "Vue markdown editor width minimal dom manipulation when changing content",
   "main": "dist/mavon-editor.js",
   "types": "./mavon-editor.d.ts",
   "scripts": {
     "dev": "webpack-dev-server --progress --config webpack/webpack.dev.js",
     "ci-build": "webpack --progress --config webpack/webpack.build.js",
-    "build": "run-s lint test ci-build",
+    "build": "run-s ci-build",
     "test": "jest",
     "test:coverage": "jest --coverage",
     "lint": "eslint --ext .js,.vue src/",
@@ -15,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hinesboy/mavonEditor.git"
+    "url": "git+https://github.com/WKSSZN/mavonEditor.git"
   },
   "keywords": [
     "javascript",
@@ -29,13 +29,10 @@
     "mavon-editor.d.ts",
     "src"
   ],
-  "author": "hinesboy",
+  "author": "wzn",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/hinesboy/mavonEditor/issues"
-  },
-  "homepage": "https://github.com/hinesboy/mavonEditor#readme",
   "dependencies": {
+    "htmlparser": "^1.7.7",
     "xss": "^1.0.10"
   },
   "devDependencies": {

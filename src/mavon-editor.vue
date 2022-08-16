@@ -37,10 +37,11 @@
             <!--展示区-->
             <div :class="{'single-show': (!s_subfield && s_preview_switch) || (!s_subfield && s_html_code)}"
                  v-show="s_preview_switch || s_html_code" class="v-note-show">
-                <div ref="vShowContent" v-html="d_render" v-show="!s_html_code"
-                     :class="{'scroll-style': s_scrollStyle, 'scroll-style-border-radius': s_scrollStyle}" class="v-show-content"
-                     :style="{'background-color': previewBackground}">
-                </div>
+                 <md-preview ref="vShowContent" v-show="!s_html_code" 
+                 :class="{'scroll-style': s_scrollStyle, 'scroll-style-border-radius': s_scrollStyle}" 
+                 class="v-show-content for-test"
+                 :style="{'background-color': previewBackground}"
+                 :html="d_render"></md-preview>
                 <div v-show="s_html_code" :class="{'scroll-style': s_scrollStyle, 'scroll-style-border-radius': s_scrollStyle}" class="v-show-content-html"
                   :style="{'background-color': previewBackground}">
                     {{d_render}}
@@ -116,6 +117,7 @@ import {CONFIG} from './lib/config.js'
 import markdown, {initMarkdown} from './lib/mixins/markdown.js'
 import md_toolbar_left from './components/md-toolbar-left.vue'
 import md_toolbar_right from './components/md-toolbar-right.vue'
+import "./components/md-preview.js"
 import "./lib/font/css/fontello.css"
 import './lib/css/md.css'
 

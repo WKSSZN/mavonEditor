@@ -369,7 +369,7 @@ export const getNavigation = ($vm , full) => {
             node.style.display = 'none'
         } else {
             node.onclick = function () {
-                let vShowContent = $vm.$refs.vShowContent;
+                let vShowContent = $vm.$refs.vShowContent.$el;
                 let vNoteEdit = $vm.$refs.vNoteEdit;
                 if ($vm.s_subfield) {
                     // 双栏
@@ -406,8 +406,8 @@ export const scrollLink = ($event, $vm) => {
     }
     $vm.edit_scroll_height = element.scrollHeight
     // end ----
-    if ($vm.$refs.vShowContent.scrollHeight > $vm.$refs.vShowContent.offsetHeight) {
-        $vm.$refs.vShowContent.scrollTop = ($vm.$refs.vShowContent.scrollHeight - $vm.$refs.vShowContent.offsetHeight) * ratio
+    if ($vm.$refs.vShowContent.$el.scrollHeight > $vm.$refs.vShowContent.$el.offsetHeight) {
+        $vm.$refs.vShowContent.$el.scrollTop = ($vm.$refs.vShowContent.scrollHeight - $vm.$refs.vShowContent.$el.offsetHeight) * ratio
     }
 }
 /**
@@ -523,7 +523,7 @@ export function loadLink(src, callback, id) {
 
 export const ImagePreviewListener = ($vm) => {
     // vShowContent
-    $vm.$refs.vShowContent.addEventListener('click', function (event) {
+    $vm.$refs.vShowContent.$el.addEventListener('click', function (event) {
         event = event ? event : window.event;
         let ele = event.srcElement ? event.srcElement : event.target;
         if (ele.tagName === 'IMG') {
